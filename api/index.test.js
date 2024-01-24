@@ -19,6 +19,16 @@ describe('tests compound rate calculator variations', () => {
                 initialCapital: 100,
             })).toBe(102.01);
     });
+    test('should calculate with aport', () => {
+        expect(index({
+            rateType: 'MONTH',
+            periodType: 'MONTH',
+            period: 2,
+            rate: 0.01,
+            initialCapital: 100,
+            aport: 100,
+        })).toBe(303.01);
+    });
     test.todo('period type is MONTH and rate type is YEAR');
     test.todo('period type is YEAR and rate type is MONTH');
     test.todo('period type is MONTH and rate type is MONTH');
